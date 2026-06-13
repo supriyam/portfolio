@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supriya Reddy Machanna — Senior Full-Stack & AI Engineer</title>
+<meta name="description" content="Senior Full-Stack & AI Engineer with 10+ years. React, TypeScript, Node.js, LLM Integration, Azure. Open to remote US roles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0a0a0f;
+    --bg2: #111118;
+    --bg3: #18181f;
+    --card: #1c1c25;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.12);
+    --text: #f0f0f5;
+    --muted: #888899;
+    --accent: #7c6fcd;
+    --accent2: #a89be0;
+    --teal: #3dbfa0;
+    --teal2: #5dd4b8;
+    --amber: #e8a43a;
+    --pink: #d46fa0;
+    --tag-bg: rgba(124,111,205,0.12);
+    --tag-text: #a89be0;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,15,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+  .nav-logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--accent2);
+    letter-spacing: -0.3px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.2s;
+    letter-spacing: 0.3px;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  .hero {
+    padding: 5rem 2rem 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(61,191,160,0.1);
+    border: 0.5px solid rgba(61,191,160,0.25);
+    color: var(--teal2);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+  }
+  .hero-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--teal);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+  .hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+  .hero h1 span {
+    background: linear-gradient(135deg, #7c6fcd 0%, #a89be0 50%, #3dbfa0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-subtitle {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 1rem 0 2rem;
+    line-height: 1.8;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-primary:hover { background: #9080e0; }
+  .btn-outline {
+    background: transparent;
+    color: var(--text);
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    border: 0.5px solid var(--border2);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent2); }
+
+  .stats {
+    display: flex;
+    gap: 2rem;
+    padding: 2.5rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    border-top: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .stat { flex: 1; }
+  .stat-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent2);
+    letter-spacing: -1px;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-top: 2px;
+  }
+
+  section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+  .section-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--teal);
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 2.5rem;
+    color: var(--text);
+  }
+
+  .featured-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .project-card {
+    background: var(--card);
+    border: 0.5px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    transition: border-color 0.2s, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+  }
+  .project-card.ai::before { background: linear-gradient(90deg, #7c6fcd, #a89be0); }
+  .project-card.teal::before { background: linear-gradient(90deg, #3dbfa0, #5dd4b8); }
+  .project-card.amber::before { background: linear-gradient(90deg, #e8a43a, #f0c060); }
+  .project-card.pink::before { background: linear-gradient(90deg, #d46fa0, #e89bc0); }
+  .project-card:hover { border-color: var(--border2); transform: translateY(-2px); }
+  .project-card.featured {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .project-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 1rem;
+  }
+  .project-icon.purple { background: rgba(124,111,205,0.15); }
+  .project-icon.teal { background: rgba(61,191,160,0.15); }
+  .project-icon.amber { background: rgba(232,164,58,0.15); }
+  .project-icon.pink { background: rgba(212,111,160,0.15); }
+
+  .project-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+  .project-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 1rem;
+  }
+  .project-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  .tag {
+    font-size: 11px;
+    padding: 3px 9px;
+    border-radius: 5px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    font-weight: 500;
+    letter-spacing: 0.2px;
+  }
+  .tag.teal { background: rgba(61,191,160,0.1); color: var(--teal2); }
+  .tag.amber { background: rgba(232,164,58,0.1); color: var(--amber); }
+  .tag.pink { background: rgba(212,111,160,0.1); color: var(--pink); }
+
+  .impact-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--teal2);
+    background: rgba(61,191,160,0.08);
+    border: 0.5px solid rgba(61,191,160,0.2);
+    padding: 3px 10px;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+
+  .featured-visual {
+    background: var(--bg3);
+    border-radius: 10px;
+    padding: 1.25rem;
+    border: 0.5px solid var(--border);
+  }
+  .visual-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .visual-bar-label {
+    font-size: 11px;
+    color: var(--muted);
+    width: 85px;
+    flex-shrink: 0;
+  }
+  .visual-bar-track {
+    flex: 1;
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .visual-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+  }
+  .visual-bar-val {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent2);
+    width: 36px;
+    text-align: right;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent2);
+    text-decoration: none;
+    padding: 6px 12px;
+    border: 0.5px solid rgba(124,111,205,0.3);
+    border-radius: 6px;
+    transition: all 0.2s;
+  }
+  .project-link:hover { border-color: var(--accent); background: rgba(124,111,205,0.08); }
+  .project-link.teal { color: var(--teal2); border-color: rgba(61,191,160,0.3); }
+  .project-link.teal:hover { background: rgba(61,191,160,0.08); border-color: var(--teal); }
+
+  .skills-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+  }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .skill-group {
+    background: var(--card);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+  }
+  .skill-group-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  .skill-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .skill-chip {
+    font-size: 12px;
+    padding: 4px 9px;
+    border-radius: 5px;
+    font-weight: 500;
+  }
+
+  .exp-list { display: flex; flex-direction: column; gap: 1.5rem; }
+  .exp-card {
+    background: var(--card);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.5rem;
+  }
+  .exp-company {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text);
+  }
+  .exp-client { font-size: 12px; color: var(--accent2); font-weight: 500; margin: 2px 0; }
+  .exp-role { font-size: 13px; color: var(--muted); margin-bottom: 0.75rem; }
+  .exp-date {
+    font-size: 12px;
+    color: var(--muted);
+    text-align: right;
+    white-space: nowrap;
+  }
+  .exp-bullets {
+    grid-column: span 2;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .exp-bullets li {
+    font-size: 13px;
+    color: var(--muted);
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.6;
+  }
+  .exp-bullets li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 11px;
+    top: 3px;
+  }
+
+  .ai-banner {
+    background: linear-gradient(135deg, rgba(124,111,205,0.08) 0%, rgba(61,191,160,0.06) 100%);
+    border: 0.5px solid rgba(124,111,205,0.2);
+    border-radius: 14px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: center;
+  }
+  .ai-banner h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+  .ai-banner p { font-size: 13px; color: var(--muted); }
+  .ai-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 0.75rem; }
+  .ai-pill {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .contact-card {
+    background: var(--card);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+    text-decoration: none;
+    transition: border-color 0.2s;
+  }
+  .contact-card:hover { border-color: var(--accent); }
+  .contact-card .icon { font-size: 22px; margin-bottom: 6px; }
+  .contact-card .label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; }
+  .contact-card .value { font-size: 13px; color: var(--text); font-weight: 500; margin-top: 3px; }
+
+  footer {
+    border-top: 0.5px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 600px) {
+    .featured-grid, .project-card.featured { grid-template-columns: 1fr; }
+    .project-card.featured { grid-column: span 1; }
+    .stats { flex-wrap: wrap; gap: 1.5rem; }
+    nav { padding: 0 1rem; }
+    .nav-links { gap: 1.2rem; }
+    section { padding: 3rem 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Supriya Reddy Machanna</div>
+  <ul class="nav-links">
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Open to new opportunities · Remote USA</div>
+  <h1>Senior Full-Stack &<br><span>AI Engineer · .NET · Python</span></h1>
+  <p class="hero-subtitle">
+    10+ years delivering enterprise React/TypeScript frontends, .NET/C# backend services, and production AI integrations for Microsoft and Pearson. From LLM-powered content automation to C# Azure Functions ingesting 300k+ meters of data — I build across the full stack.
+  </p>
+  <div class="hero-ctas">
+    <a href="mailto:supriya.reddy2617@gmail.com" class="btn-primary">Get in touch</a>
+    <a href="https://linkedin.com/in/supriya-reddy-machanna" target="_blank" class="btn-outline">LinkedIn ↗</a>
+    <a href="https://github.com/supriyam" target="_blank" class="btn-outline">GitHub ↗</a>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-num">10+</div>
+    <div class="stat-label">Years Experience</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">2</div>
+    <div class="stat-label">Fortune 500 Clients</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">40%</div>
+    <div class="stat-label">Workflow Reduction</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">300k+</div>
+    <div class="stat-label">Meters · .NET Ingestion</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">5+</div>
+    <div class="stat-label">Teams Mentored</div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-eyebrow">Featured work</div>
+  <div class="section-title">Projects & impact</div>
+
+  <div class="ai-banner">
+    <div>
+      <h3>Full-Stack: React · .NET/C# · Python · AI/LLM — Production at Microsoft Scale</h3>
+      <p>Building end-to-end systems — from LLM-powered content platforms and RAG pipelines to C# Azure Functions handling 300k+ meters of enterprise data and Python automation replacing manual workflows.</p>
+      <div class="ai-pills">
+        <span class="ai-pill" style="background:rgba(124,111,205,0.12);color:#a89be0;">LLM / RAG Integration</span>
+        <span class="ai-pill" style="background:rgba(100,149,237,0.12);color:#8ab4f8;">.NET 8 / C#</span>
+        <span class="ai-pill" style="background:rgba(232,164,58,0.1);color:#e8a43a;">Python · Pandas</span>
+        <span class="ai-pill" style="background:rgba(61,191,160,0.1);color:#5dd4b8;">Azure Functions</span>
+        <span class="ai-pill" style="background:rgba(212,111,160,0.1);color:#e89bc0;">GitHub Copilot</span>
+      </div>
+    </div>
+    <div style="text-align:right;">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:700;color:#a89be0;">+20%</div>
+      <div style="font-size:11px;color:var(--muted);">team velocity<br>via AI tooling</div>
+    </div>
+  </div>
+
+  <div class="featured-grid">
+
+    <!-- FEATURED: AI Content Composer -->
+    <div class="project-card ai featured">
+      <div>
+        <div class="project-icon purple">🤖</div>
+        <div class="impact-badge">↓ 40% manual effort · Enterprise scale</div>
+        <div class="project-title">AI Content Composer — Microsoft</div>
+        <p class="project-desc">
+          LLM-powered enterprise marketing content automation platform. Architected the full React/TypeScript/Redux frontend and integrated LLM payload prompting with RAG-based workflows to automate multi-step content creation at scale. Monitored via Azure CosmosDB with full CI/CD on Azure DevOps.
+        </p>
+        <div class="project-tags">
+          <span class="tag">React.js</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">LLM / Prompt Engineering</span>
+          <span class="tag">RAG Systems</span>
+          <span class="tag">Redux</span>
+          <span class="tag">Azure CosmosDB</span>
+          <span class="tag">Storybook</span>
+        </div>
+        <a href="https://github.com/supriyam" target="_blank" class="project-link">View GitHub ↗</a>
+      </div>
+      <div class="featured-visual">
+        <div style="font-size:11px;color:var(--muted);margin-bottom:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.8px;">Measured outcomes</div>
+        <div class="visual-bar">
+          <span class="visual-bar-label">Manual effort</span>
+          <div class="visual-bar-track"><div class="visual-bar-fill" style="width:60%;background:linear-gradient(90deg,#7c6fcd,#a89be0);"></div></div>
+          <span class="visual-bar-val">↓40%</span>
+        </div>
+        <div class="visual-bar">
+          <span class="visual-bar-label">Bundle size</span>
+          <div class="visual-bar-track"><div class="visual-bar-fill" style="width:75%;background:linear-gradient(90deg,#3dbfa0,#5dd4b8);"></div></div>
+          <span class="visual-bar-val">↓25%</span>
+        </div>
+        <div class="visual-bar">
+          <span class="visual-bar-label">Bug incidents</span>
+          <div class="visual-bar-track"><div class="visual-bar-fill" style="width:85%;background:linear-gradient(90deg,#e8a43a,#f0c060);"></div></div>
+          <span class="visual-bar-val">↓15%</span>
+        </div>
+        <div class="visual-bar">
+          <span class="visual-bar-label">Team velocity</span>
+          <div class="visual-bar-track"><div class="visual-bar-fill" style="width:70%;background:linear-gradient(90deg,#d46fa0,#e89bc0);"></div></div>
+          <span class="visual-bar-val">↑20%</span>
+        </div>
+        <div style="margin-top:14px;padding-top:12px;border-top:0.5px solid var(--border);">
+          <div style="font-size:11px;color:var(--muted);">Stack</div>
+          <div style="font-size:12px;color:var(--text);margin-top:4px;">React · TypeScript · Redux · Azure · CosmosDB · Storybook</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Commercial Marketplace -->
+    <div class="project-card teal featured">
+      <div>
+        <div class="project-icon teal">🛒</div>
+        <div class="impact-badge">↓ 30% page load · 5+ teams · SSR</div>
+        <div class="project-title">Commercial Marketplace & CoSell Portal — Microsoft</div>
+        <p class="project-desc">
+          Partner portal for ISV catalog management, CoSell workflows, Referral Analytics, and Leads — serving thousands of enterprise partners globally. Pioneered Webpack Module Federation micro-frontend architecture across 5+ teams, eliminating cross-team deployment conflicts. Next.js SSR cut initial page load by 30%.
+        </p>
+        <div class="project-tags">
+          <span class="tag teal">Next.js SSR</span>
+          <span class="tag teal">TypeScript</span>
+          <span class="tag teal">GraphQL (Apollo)</span>
+          <span class="tag teal">Material UI</span>
+          <span class="tag teal">Webpack Module Federation</span>
+          <span class="tag teal">React Hooks</span>
+        </div>
+        <a href="https://github.com/supriyam" target="_blank" class="project-link teal">View GitHub ↗</a>
+      </div>
+      <div class="featured-visual">
+        <div style="font-size:11px;color:var(--muted);margin-bottom:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.8px;">Architecture highlights</div>
+        <div class="visual-bar">
+          <span class="visual-bar-label">Page load time</span>
+          <div class="visual-bar-track"><div class="visual-bar-fill" style="width:70%;background:linear-gradient(90deg,#3dbfa0,#5dd4b8);"></div></div>
+          <span class="visual-bar-val">↓30%</span>
+        </div>
+        <div class="visual-bar">
+          <span class="visual-bar-label">Teams served</span>
+          <div class="visual-bar-track"><div class="visual-bar-fill" style="width:80%;background:linear-gradient(90deg,#7c6fcd,#a89be0);"></div></div>
+          <span class="visual-bar-val">5+</span>
+        </div>
+        <div class="visual-bar">
+          <span class="visual-bar-label">Velocity gain</span>
+          <div class="visual-bar-track"><div class="visual-bar-fill" style="width:60%;background:linear-gradient(90deg,#e8a43a,#f0c060);"></div></div>
+          <span class="visual-bar-val">↑20%</span>
+        </div>
+        <div style="margin-top:14px;padding-top:12px;border-top:0.5px solid var(--border);">
+          <div style="font-size:11px;color:var(--muted);">Patterns</div>
+          <div style="font-size:12px;color:var(--text);margin-top:4px;">Micro-Frontend · Module Federation · SSR · GraphQL · Azure DevOps CI/CD</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- .NET Pricing Engine - FEATURED -->
+    <div class="project-card ai featured">
+      <div>
+        <div class="project-icon purple">⚙️</div>
+        <div class="impact-badge">~300k+ meters ingested · Multi-owner approval engine</div>
+        <div class="project-title">AIA Pricing Engine & Algorithm Management — Microsoft</div>
+        <p class="project-desc">
+          Full-stack enterprise pricing platform built with React/TypeScript frontend and .NET 8/C# backend on Azure. Engineered a C# Timer-triggered Azure Function (5-min interval) using Managed Identity + SqlBulkCopy for high-volume OCP Result Sync (~300k+ meters). Built a complex multi-owner approval engine (Fluent UI Dialog) with Not Assigned → Pending → Approved/Rejected lifecycle, automated email notifications via Power Automate, and algorithm CRUD with Monaco Editor + NCalc2 real-time formula validation. Role-based auth via Azure AD S2S with X-User-Roles header validation across Algo-Admin, Creator, Approver, SBP, and RBP roles. Implemented automated email notifications for missing configurations — detects unconfigured parent offerings, generates dynamic HTML tables with XSS-safe encoding via enhanced Dapper stored procedures.
+        </p>
+        <div class="project-tags">
+          <span class="tag">.NET 8 / C#</span>
+          <span class="tag">Azure Functions</span>
+          <span class="tag">Dapper ORM</span>
+          <span class="tag">Monaco Editor</span>
+          <span class="tag">Fluent UI</span>
+          <span class="tag">React.js</span>
+          <span class="tag">TanStack Query</span>
+          <span class="tag">Azure AD S2S</span>
+          <span class="tag">SQL Server</span>
+          <span class="tag">Power Automate</span>
+        </div>
+        <a href="https://github.com/supriyam" target="_blank" class="project-link">View GitHub ↗</a>
+      </div>
+      <div class="featured-visual">
+        <div style="font-size:11px;color:var(--muted);margin-bottom:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.8px;">Backend Architecture</div>
+        <div class="visual-bar">
+          <span class="visual-bar-label">Data ingestion</span>
+          <div class="visual-bar-track"><div class="visual-bar-fill" style="width:95%;background:linear-gradient(90deg,#7c6fcd,#a89be0);"></div></div>
+          <span class="visual-bar-val">300k+</span>
+        </div>
+        <div class="visual-bar">
+          <span class="visual-bar-label">Sync interval</span>
+          <div class="visual-bar-track"><div class="visual-bar-fill" style="width:20%;background:linear-gradient(90deg,#3dbfa0,#5dd4b8);"></div></div>
+          <span class="visual-bar-val">5 min</span>
+        </div>
+        <div class="visual-bar">
+          <span class="visual-bar-label">Approval roles</span>
+          <div class="visual-bar-track"><div class="visual-bar-fill" style="width:75%;background:linear-gradient(90deg,#e8a43a,#f0c060);"></div></div>
+          <span class="visual-bar-val">5 types</span>
+        </div>
+        <div style="margin-top:14px;padding-top:12px;border-top:0.5px solid var(--border);">
+          <div style="font-size:11px;color:var(--muted);">Patterns</div>
+          <div style="font-size:12px;color:var(--text);margin-top:4px;">Repository Pattern · Command/Query Separation · Service Layer DI · AutoMapper · Azure AD S2S</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- UAT Portal -->
+    <div class="project-card ai">
+      <div class="project-icon purple">📊</div>
+      <div class="impact-badge">Multi-tenant · Real-time dashboards</div>
+      <div class="project-title">Unified Action Tracker Portal — Microsoft</div>
+      <p class="project-desc">Multi-tenant action management platform with advanced filters, custom dashboards, and search for tracking customer action history across concurrent enterprise users.</p>
+      <div class="project-tags">
+        <span class="tag">React.js</span>
+        <span class="tag">Redux</span>
+        <span class="tag">Azure</span>
+        <span class="tag">CosmosDB</span>
+      </div>
+      <a href="https://github.com/supriyam" target="_blank" class="project-link">View GitHub ↗</a>
+    </div>
+
+    <!-- Python Data Pipeline -->
+    <div class="project-card amber">
+      <div class="project-icon amber">🐍</div>
+      <div class="impact-badge">Eliminated manual validation errors</div>
+      <div class="project-title">Automated Data Ingestion & Validation Pipeline</div>
+      <p class="project-desc">Python automation pipeline to ingest dynamic weekly client master data. Parses complex Excel schemas via Pandas, performs real-time data validation, and automates transactional database updates — replacing manual verification processes and accelerating client data sync.</p>
+      <div class="project-tags">
+        <span class="tag amber">Python</span>
+        <span class="tag amber">Pandas</span>
+        <span class="tag amber">Data Pipelines</span>
+        <span class="tag amber">Automation</span>
+        <span class="tag amber">SQL / NoSQL</span>
+      </div>
+      <a href="https://github.com/supriyam" target="_blank" class="project-link" style="color:var(--amber);border-color:rgba(232,164,58,0.3);">View GitHub ↗</a>
+    </div>
+
+    <!-- Track Change Manager -->
+    <div class="project-card teal">
+      <div class="project-icon teal">📚</div>
+      <div class="impact-badge">Full-Stack MERN · Pearson</div>
+      <div class="project-title">Track Change Manager — Pearson</div>
+      <p class="project-desc">Full-stack MERN document change management platform for Pearson's e-learning ecosystem. Built reusable Storybook component library; implemented Redis caching to reduce API response times.</p>
+      <div class="project-tags">
+        <span class="tag teal">React.js</span>
+        <span class="tag teal">Node.js</span>
+        <span class="tag teal">Express</span>
+        <span class="tag teal">MongoDB</span>
+        <span class="tag teal">Redis</span>
+        <span class="tag teal">AWS EC2</span>
+      </div>
+      <a href="https://github.com/supriyam" target="_blank" class="project-link teal">View GitHub ↗</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-eyebrow">Technical expertise</div>
+  <div class="section-title">Skills & stack</div>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="skill-group-title">Frontend</div>
+      <div class="skill-chips">
+        <span class="skill-chip" style="background:rgba(124,111,205,0.12);color:#a89be0;">React.js</span>
+        <span class="skill-chip" style="background:rgba(124,111,205,0.12);color:#a89be0;">Next.js</span>
+        <span class="skill-chip" style="background:rgba(124,111,205,0.12);color:#a89be0;">TypeScript</span>
+        <span class="skill-chip" style="background:rgba(124,111,205,0.12);color:#a89be0;">JavaScript ES6+</span>
+        <span class="skill-chip" style="background:rgba(124,111,205,0.12);color:#a89be0;">Redux</span>
+        <span class="skill-chip" style="background:rgba(124,111,205,0.12);color:#a89be0;">TanStack Query</span>
+        <span class="skill-chip" style="background:rgba(124,111,205,0.12);color:#a89be0;">React Hooks</span>
+        <span class="skill-chip" style="background:rgba(124,111,205,0.12);color:#a89be0;">Storybook</span>
+        <span class="skill-chip" style="background:rgba(124,111,205,0.12);color:#a89be0;">Fluent UI</span>
+        <span class="skill-chip" style="background:rgba(124,111,205,0.12);color:#a89be0;">Material UI</span>
+        <span class="skill-chip" style="background:rgba(124,111,205,0.12);color:#a89be0;">Monaco Editor</span>
+        <span class="skill-chip" style="background:rgba(124,111,205,0.12);color:#a89be0;">HTML5 / CSS3</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">.NET / C#</div>
+      <div class="skill-chips">
+        <span class="skill-chip" style="background:rgba(100,149,237,0.12);color:#8ab4f8;">.NET 8 / C#</span>
+        <span class="skill-chip" style="background:rgba(100,149,237,0.12);color:#8ab4f8;">Azure Functions</span>
+        <span class="skill-chip" style="background:rgba(100,149,237,0.12);color:#8ab4f8;">Dapper ORM</span>
+        <span class="skill-chip" style="background:rgba(100,149,237,0.12);color:#8ab4f8;">REST API Development</span>
+        <span class="skill-chip" style="background:rgba(100,149,237,0.12);color:#8ab4f8;">Repository Pattern</span>
+        <span class="skill-chip" style="background:rgba(100,149,237,0.12);color:#8ab4f8;">Service Layer DI</span>
+        <span class="skill-chip" style="background:rgba(100,149,237,0.12);color:#8ab4f8;">AutoMapper</span>
+        <span class="skill-chip" style="background:rgba(100,149,237,0.12);color:#8ab4f8;">Azure AD S2S</span>
+        <span class="skill-chip" style="background:rgba(100,149,237,0.12);color:#8ab4f8;">Managed Identity</span>
+        <span class="skill-chip" style="background:rgba(100,149,237,0.12);color:#8ab4f8;">SqlBulkCopy</span>
+        <span class="skill-chip" style="background:rgba(100,149,237,0.12);color:#8ab4f8;">NCalc2</span>
+        <span class="skill-chip" style="background:rgba(100,149,237,0.12);color:#8ab4f8;">SQL Server</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Python & Data</div>
+      <div class="skill-chips">
+        <span class="skill-chip" style="background:rgba(232,164,58,0.12);color:#e8a43a;">Python</span>
+        <span class="skill-chip" style="background:rgba(232,164,58,0.12);color:#e8a43a;">Pandas</span>
+        <span class="skill-chip" style="background:rgba(232,164,58,0.12);color:#e8a43a;">Data Pipelines</span>
+        <span class="skill-chip" style="background:rgba(232,164,58,0.12);color:#e8a43a;">Excel Schema Parsing</span>
+        <span class="skill-chip" style="background:rgba(232,164,58,0.12);color:#e8a43a;">Automation Scripting</span>
+        <span class="skill-chip" style="background:rgba(232,164,58,0.12);color:#e8a43a;">API Orchestration</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">AI & LLM</div>
+      <div class="skill-chips">
+        <span class="skill-chip" style="background:rgba(61,191,160,0.1);color:#5dd4b8;">LLM Integration</span>
+        <span class="skill-chip" style="background:rgba(61,191,160,0.1);color:#5dd4b8;">RAG Systems</span>
+        <span class="skill-chip" style="background:rgba(61,191,160,0.1);color:#5dd4b8;">Prompt Engineering</span>
+        <span class="skill-chip" style="background:rgba(61,191,160,0.1);color:#5dd4b8;">AI Workflow Automation</span>
+        <span class="skill-chip" style="background:rgba(61,191,160,0.1);color:#5dd4b8;">GitHub Copilot</span>
+        <span class="skill-chip" style="background:rgba(61,191,160,0.1);color:#5dd4b8;">Azure AI Services</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Architecture</div>
+      <div class="skill-chips">
+        <span class="skill-chip" style="background:rgba(212,111,160,0.1);color:#e89bc0;">Micro-Frontend</span>
+        <span class="skill-chip" style="background:rgba(212,111,160,0.1);color:#e89bc0;">Webpack Module Federation</span>
+        <span class="skill-chip" style="background:rgba(212,111,160,0.1);color:#e89bc0;">GraphQL (Apollo)</span>
+        <span class="skill-chip" style="background:rgba(212,111,160,0.1);color:#e89bc0;">RESTful APIs</span>
+        <span class="skill-chip" style="background:rgba(212,111,160,0.1);color:#e89bc0;">Command/Query Separation</span>
+        <span class="skill-chip" style="background:rgba(212,111,160,0.1);color:#e89bc0;">Code Splitting</span>
+        <span class="skill-chip" style="background:rgba(212,111,160,0.1);color:#e89bc0;">WCAG 2.1 AA</span>
+        <span class="skill-chip" style="background:rgba(212,111,160,0.1);color:#e89bc0;">SOC 2 Compliance</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Cloud & Infrastructure</div>
+      <div class="skill-chips">
+        <span class="skill-chip" style="background:rgba(61,191,160,0.1);color:#5dd4b8;">Azure Functions</span>
+        <span class="skill-chip" style="background:rgba(61,191,160,0.1);color:#5dd4b8;">Azure CosmosDB</span>
+        <span class="skill-chip" style="background:rgba(61,191,160,0.1);color:#5dd4b8;">Azure App Services</span>
+        <span class="skill-chip" style="background:rgba(61,191,160,0.1);color:#5dd4b8;">Azure DevOps CI/CD</span>
+        <span class="skill-chip" style="background:rgba(61,191,160,0.1);color:#5dd4b8;">Power Automate</span>
+        <span class="skill-chip" style="background:rgba(61,191,160,0.1);color:#5dd4b8;">Node.js</span>
+        <span class="skill-chip" style="background:rgba(61,191,160,0.1);color:#5dd4b8;">Express.js</span>
+        <span class="skill-chip" style="background:rgba(61,191,160,0.1);color:#5dd4b8;">AWS EC2</span>
+        <span class="skill-chip" style="background:rgba(61,191,160,0.1);color:#5dd4b8;">Docker</span>
+        <span class="skill-chip" style="background:rgba(61,191,160,0.1);color:#5dd4b8;">MySQL · MongoDB · Redis</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Testing & Quality</div>
+      <div class="skill-chips">
+        <span class="skill-chip" style="background:rgba(124,111,205,0.12);color:#a89be0;">Jest</span>
+        <span class="skill-chip" style="background:rgba(124,111,205,0.12);color:#a89be0;">React Testing Library</span>
+        <span class="skill-chip" style="background:rgba(124,111,205,0.12);color:#a89be0;">Playwright (E2E)</span>
+        <span class="skill-chip" style="background:rgba(124,111,205,0.12);color:#a89be0;">Enzyme</span>
+        <span class="skill-chip" style="background:rgba(124,111,205,0.12);color:#a89be0;">Code Review</span>
+        <span class="skill-chip" style="background:rgba(124,111,205,0.12);color:#a89be0;">Agile / Scrum</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-eyebrow">Work history</div>
+  <div class="section-title">Experience</div>
+  <div class="exp-list">
+
+    <div class="exp-card">
+      <div>
+        <div class="exp-company">LTIMindtree</div>
+        <div class="exp-client">Client: Microsoft · Seattle, WA</div>
+        <div class="exp-role">Sr. Specialist Software Engineer</div>
+      </div>
+      <div class="exp-date">Oct 2024 – Present</div>
+      <ul class="exp-bullets">
+        <li>Architected AI Content Composer (React.js, TypeScript, Redux, Storybook) with LLM payload prompting and RAG systems, automating enterprise marketing content workflows and cutting manual effort by 40%</li>
+        <li>Engineered C# Timer-triggered Azure Function (5-min interval) for OCP Result Sync using Managed Identity + SqlBulkCopy for high-volume data ingestion (~300k+ meters); progress tracking via polling table with Started/Completed/Failed states and elapsed-time metrics</li>
+        <li>Built full-stack AIA Pricing Engine: React.js/TypeScript frontend + .NET 8/C# REST APIs on Azure App Services; complex algorithm CRUD with Monaco Editor + NCalc2 real-time formula validation and IntelliSense-style parameter insertion</li>
+        <li>Designed multi-owner approval engine (Fluent UI Dialog) with Not Assigned → Pending → Approved/Rejected lifecycle; automated email notifications via Power Automate HTML templates; role-based auth (Algo-Admin, Creator, Approver, SBP, RBP) via Azure AD S2S + X-User-Roles header validation</li>
+        <li>Built Seed Management Module — virtualized data grid with inline seed value editing, regional override support, bulk calculation triggers via Pricing Function App, and DailyAlgoSeedTelemetryController for daily ingestion orchestration</li>
+        <li>Implemented automated email notification system for missing algorithm configurations — detects unconfigured parent offerings post auto-assignment, generates dynamic HTML tables with XSS-safe encoding via enhanced Dapper stored procedures (multi-result set)</li>
+        <li>Engineered Python data pipeline to automate weekly client master data ingestion — parses complex Excel schemas via Pandas, performs real-time validation, and drives transactional database updates, eliminating manual verification errors</li>
+        <li>Built multi-tenant Unified Action Tracker Portal (React.js/Redux) with advanced filters, custom dashboards, and search; TanStack React Query for server-state caching with custom hooks for complex form state</li>
+        <li>Implemented Repository pattern (Command/Query separation), Service layer with DI, AutoMapper for DTO transformations across .NET backend services</li>
+        <li>Achieved WCAG 2.1 AA compliance; Playwright E2E + Jest unit tests cut bug incidents by 15%; leveraged GitHub Copilot to increase team velocity by 20%</li>
+        <li>Maintained Azure DevOps CI/CD pipelines and CosmosDB log monitoring; optimized bundle size by 25% via code splitting and lazy loading</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <div>
+        <div class="exp-company">Infosys</div>
+        <div class="exp-client">Client: Microsoft (Seattle) & Pearson (Boston)</div>
+        <div class="exp-role">Sr. Frontend Lead</div>
+      </div>
+      <div class="exp-date">Oct 2019 – Oct 2024</div>
+      <ul class="exp-bullets">
+        <li>Led frontend for Microsoft's Commercial Marketplace — CoSell, Referral Analytics, ISV Catalog, and Leads — serving thousands of enterprise partners</li>
+        <li>Built React.js/Next.js/TypeScript applications; Next.js SSR reduced initial page load by 30% and improved SEO</li>
+        <li>Pioneered micro-frontend architecture using Webpack Module Federation across 5+ teams, eliminating cross-team deployment conflicts</li>
+        <li>Integrated GraphQL (Apollo Client) alongside REST endpoints; simplified data-fetching and eliminated API over-fetching</li>
+        <li>Delivered accessible component libraries (Material UI, Ant Design) adopted across multiple product teams</li>
+        <li>Mentored 3–4 engineers; sprint retrospectives drove 20% velocity improvement</li>
+        <li>Managed Azure DevOps CI/CD; implemented Redux with Saga/redux-thunk for complex portal state management</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <div>
+        <div class="exp-company">Cognizant</div>
+        <div class="exp-client">Client: Pearson · Boston, MA</div>
+        <div class="exp-role">Sr. UI Developer</div>
+      </div>
+      <div class="exp-date">Oct 2018 – Sep 2019</div>
+      <ul class="exp-bullets">
+        <li>Built full-stack MERN features (React.js, Node.js, Express, MongoDB) for Track Change Manager and e-learning dashboards</li>
+        <li>Implemented Redis caching to reduce server load and improve API response times</li>
+        <li>Created reusable Storybook component library; reduced engineer onboarding time</li>
+        <li>Managed state with MobX; integrated third-party APIs for real-time data synchronization</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <div>
+        <div class="exp-company">Classic Informatics</div>
+        <div class="exp-client">Delhi, India</div>
+        <div class="exp-role">UI Developer</div>
+      </div>
+      <div class="exp-date">May 2017 – Sep 2018</div>
+      <ul class="exp-bullets">
+        <li>Built SPAs with Angular.js, Node.js, and Angular Router</li>
+        <li>Developed offline-capable Calibrand Assessment Player with crash recovery (PouchDB)</li>
+        <li>Built Dmail Chrome Extension (Node.js/MySQL); implemented on-screen XML annotation with Fabric.js</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-eyebrow">Let's connect</div>
+  <div class="section-title">Get in touch</div>
+  <div class="contact-grid">
+    <a href="mailto:supriya.reddy2617@gmail.com" class="contact-card" style="text-decoration:none;color:inherit;">
+      <div class="icon">✉️</div>
+      <div class="label">Email</div>
+      <div class="value">supriya.reddy2617@gmail.com</div>
+    </a>
+    <a href="tel:4694120862" class="contact-card" style="text-decoration:none;color:inherit;">
+      <div class="icon">📞</div>
+      <div class="label">Phone</div>
+      <div class="value">469-412-0862</div>
+    </a>
+    <a href="https://linkedin.com/in/supriya-reddy-machanna" target="_blank" class="contact-card" style="text-decoration:none;color:inherit;">
+      <div class="icon">💼</div>
+      <div class="label">LinkedIn</div>
+      <div class="value">supriya-reddy-machanna</div>
+    </a>
+    <a href="https://github.com/supriyam" target="_blank" class="contact-card" style="text-decoration:none;color:inherit;">
+      <div class="icon">⚙️</div>
+      <div class="label">GitHub</div>
+      <div class="value">github.com/supriyam</div>
+    </a>
+  </div>
+  <div style="margin-top:1.5rem;padding:1.5rem;background:var(--card);border:0.5px solid var(--border);border-radius:12px;">
+    <div style="font-size:13px;color:var(--muted);line-height:1.7;">
+      📍 <strong style="color:var(--text);">Seattle, WA</strong> · Open to fully remote (USA) · Targeting Senior Frontend, Full-Stack, and AI Engineer roles
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;color:var(--accent2);margin-bottom:6px;">Supriya Reddy Machanna</div>
+  <div>Senior Full-Stack & AI Integration Engineer · Fremont, CA · Open to Remote</div>
+</footer>
+
+</body>
+</html>
